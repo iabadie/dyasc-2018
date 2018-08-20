@@ -13,7 +13,7 @@ public class Program {
             String option = args[0];
             // Set option to V or H and D or I or print error in other cases.
             if (
-                    option.charAt(2) != 'o' ||
+                    option.charAt(1) != 'o' ||
                     (option.charAt(3) != 'h' && option.charAt(3) != 'v') ||
                     (option.charAt(4) != 'd' && option.charAt(4) != 'i'))
             {
