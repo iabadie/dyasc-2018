@@ -5,7 +5,7 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 
-public class Printer {    
+public class PrinterTest {    
     
     private void printTotal(String option, int length, int value, String fileName) {
         String total = String.valueOf(value);

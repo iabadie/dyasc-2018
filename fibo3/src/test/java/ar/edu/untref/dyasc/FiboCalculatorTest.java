@@ -1,11 +1,11 @@
 package ar.edu.untref.dyasc;
 
-public class FiboCalculator {
+public class FiboCalculatorTest {
     
     private int value;
     private int[] result;
     
-    public FiboCalculator(int value) {
+    public FiboCalculatorTest(int value) {
         super();
         this.result = this.calculateSuccession(value);
         this.value = value;

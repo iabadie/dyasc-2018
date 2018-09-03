@@ -47,11 +47,25 @@ public class Interpreter {
         }
         else if (arg.contains("-f")) {
                 this.name = arg.substring(3);
+        } else {
+            try
+            {
+               Integer.parseInt(arg);
+               this.number = arg;
+            }
+            catch( Exception e)
+            {
+               this.getError();
+            }
         }
     }
     
    private void getError() {
        this.error = "Bad Option";
+   }
+   
+   public boolean hasOptionError() {
+       return this.error != null;
    }
    
    public HashMap<String, String> getValuesMap() {
