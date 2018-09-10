@@ -5,20 +5,20 @@ import java.util.HashMap;
 public class Interpreter {
 
     private String orientation = "h";
-    private String direction = "o";
+    private String direction = "d";
     private String name = null;
     private String mode = "l";
     private String error = null;
     private String number = "0";
     private HashMap<String, String> options = new HashMap<String, String>();
-    
+
     public Interpreter(String[] args) {
         super();
         for (int x = 0; x < args.length; x++) {
             this.parseArgs(args[x]);
         }
     }
-    
+
     private void parseArgs(String arg) {
         if (arg.contains("-o")) {
             String option = arg.substring(3, 5);
@@ -59,23 +59,22 @@ public class Interpreter {
             }
         }
     }
-    
-   private void getError() {
-       this.error = "Bad Option";
-   }
-   
-   public boolean hasOptionError() {
-       return this.error != null;
-   }
-   
-   public HashMap<String, String> getValuesMap() {
-       this.options.put("orientation", this.orientation);
-       this.options.put("direction", this.direction);
-       this.options.put("mode", this.mode);
-       this.options.put("name", this.name);
-       this.options.put("number", this.number);
-       this.options.put("error", this.error);
-       return this.options;
-   }
-    
+
+    private void getError() {
+        this.error = "Bad Option";
+    }
+
+    public boolean hasOptionError() {
+        return this.error != null;
+    }
+
+    public HashMap<String, String> getValuesMap() {
+        this.options.put("orientation", this.orientation);
+        this.options.put("direction", this.direction);
+        this.options.put("mode", this.mode);
+        this.options.put("name", this.name);
+        this.options.put("number", this.number);
+        this.options.put("error", this.error);
+        return this.options;
+    }
 }

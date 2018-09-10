@@ -4,15 +4,14 @@ import java.util.HashMap;
 
 public class Program {
 
-    public static void main(String[] args) {
+    public static String main(String[] args) {
         Interpreter interpreter = new Interpreter(args);
         Printer printer = new Printer();
         if (interpreter.hasOptionError()) {
-            printer.printError();
-            return;
+            return printer.printError();
         }
         HashMap<String, String> options = interpreter.getValuesMap();
         FiboCalculator fibo = new FiboCalculator(Integer.parseInt(options.get("number")));
-        printer.printSuccession(options, fibo);
+        return printer.printSuccession(options, fibo);
     }
 }

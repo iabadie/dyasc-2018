@@ -1,51 +1,47 @@
 package ar.edu.untref.dyasc;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 public class FiboCalculatorTest {
-    
-    private int value;
-    private int[] result;
-    
-    public FiboCalculatorTest(int value) {
-        super();
-        this.result = this.calculateSuccession(value);
-        this.value = value;
+
+    @Test
+    public void testFiboSuccessionArrayResult() {
+        FiboCalculator fibo = new FiboCalculator(6);
+        int[] result = {0,1,1,2,3,5};
+        Assert.assertArrayEquals(result, fibo.getFibonacciSuccession("d"));
     }
-    
-    private int[] calculateSuccession(int value) {
-        int[] result = new int[value];
-        for (int x = 0; x < value ; x++){
-            result[x] = this.getValue(x);
-        } 
-        return result;
+
+    @Test
+    public void testFiboSuccessionArrayResultWithValueZero() {
+        FiboCalculator fibo = new FiboCalculator(0);
+        int[] result = new int[0];
+        Assert.assertArrayEquals(result, fibo.getFibonacciSuccession("d"));
     }
-    
-    private int[] calculateSuccessionReverse(int value) {
-        int[] result = new int[value];
-        for (int x = value; x > 0 ; x--){
-            result[value - x] = this.getValue(x - 1);
-        } 
-        return result;
+
+    @Test
+    public void testFiboSuccessionArrayInverseResultWithValueZero() {
+        FiboCalculator fibo = new FiboCalculator(0);
+        int[] result = new int[0];
+        Assert.assertArrayEquals(result, fibo.getFibonacciSuccession("i"));
     }
-    
-    // Recursive function to get all numbers from 0 to x position
-    private int getValue(int x) {
-        if (x == 0) return 0;
-        if (x == 1) return 1;
-        return getValue(x-1) + getValue(x-2);
+
+    @Test
+    public void testFiboSuccessionArrayInverseResult() {
+        FiboCalculator fibo = new FiboCalculator(6);
+        int[] result = {5,3,2,1,1,0};
+        Assert.assertArrayEquals(result, fibo.getFibonacciSuccession("i"));
     }
-    
-    // Get succession array in correct order
-    public int[] getFibonacciSuccession(String option) {
-        this.result =  option.equals("i") ? this.calculateSuccessionReverse(this.value) : this.calculateSuccession(this.value); 
-        return this.result;
+
+    @Test
+    public void testGetTotalWhenValue() {
+        FiboCalculator fibo = new FiboCalculator(6);
+        Assert.assertEquals(12, fibo.getTotal());
     }
-    
-    // Get total value adding each result value.
-    public int getTotal() {
-        int total = 0;
-        for (int x = 0; x < this.result.length ; x++){
-            total += this.result[x];
-        }
-        return total;
+
+    @Test
+    public void testGetTotalWhenValueIsZero() {
+        FiboCalculator fibo = new FiboCalculator(0);
+        Assert.assertEquals(0, fibo.getTotal());
     }
 }

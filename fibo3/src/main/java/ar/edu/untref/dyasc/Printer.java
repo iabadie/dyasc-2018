@@ -6,8 +6,8 @@ import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 
 public class Printer {    
-    
-    private void printTotal(String option, int length, int value, String fileName) {
+
+    private String printTotal(String option, int length, int value, String fileName) {
         String total = String.valueOf(value);
         String result = "fibo<"+length+">s:";
         if (option.equals("h")) {
@@ -21,9 +21,10 @@ public class Printer {
         } else {
             System.out.println(result);
         }
+        return result;
     }
-    
-    private void printByDirection(String option, int[] list, String fileName) {
+
+    private String printByDirection(String option, int[] list, String fileName) {
         int length = list.length;
         String result = "fibo<"+length+">:";
         for (int x = 0; x < length ; x++){
@@ -35,8 +36,9 @@ public class Printer {
         } else {
             System.out.println(result);
         }
+        return result;
     }
-    
+
     private void writeAFile(String fileName, String data, int length) {
         try {
         PrintWriter writer;
@@ -48,18 +50,18 @@ public class Printer {
             e.printStackTrace();
         }
     }
-    
-    public void printSuccession(HashMap<String, String> options, FiboCalculator fibo) {
+
+    public String printSuccession(HashMap<String, String> options, FiboCalculator fibo) {
         int[] list = fibo.getFibonacciSuccession(options.get("direction"));
         if (options.get("mode").equals("l")) {
-            this.printByDirection(options.get("orientation"), list, options.get("name"));
+            return this.printByDirection(options.get("orientation"), list, options.get("name"));
         } else {
-            this.printTotal(options.get("orientation"), list.length, fibo.getTotal(), options.get("name"));
-        }
-        
+            return this.printTotal(options.get("orientation"), list.length, fibo.getTotal(), options.get("name"));
+        }        
     }
-    
-    public void printError() {
+
+    public String printError() {
         System.out.println("Opciones no válidas.");
+        return "Opciones no válidas.";
     }
 }
