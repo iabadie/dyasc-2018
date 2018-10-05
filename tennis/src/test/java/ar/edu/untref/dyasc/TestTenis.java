@@ -7,16 +7,16 @@ import junit.framework.Assert;
 @SuppressWarnings("deprecation")
 public class TestTenis {
     
+    private Jugador jugador1 = new Jugador("Pepe");
+    
     @Test
     public void unJugadorSumaUnPunto() {
-        Jugador jugador1 = new Jugador();
         jugador1.anotarPunto();
         Assert.assertEquals("15", jugador1.obtenerPuntos());
     }
     
     @Test
     public void unJugadorSumaUnPuntoDe30A40() {
-        Jugador jugador1 = new Jugador();
         jugador1.anotarPunto();
         jugador1.anotarPunto();
         jugador1.anotarPunto();
@@ -25,11 +25,25 @@ public class TestTenis {
     
     @Test
     public void siJugadorTiene40PuntosYSumaUnoGanaUnGame() {
-        Jugador jugador1 = new Jugador();
         jugador1.anotarPunto();
         jugador1.anotarPunto();
         jugador1.anotarPunto();
         jugador1.anotarPunto();
         Assert.assertEquals(1, jugador1.obtenerGames());
+    }
+    
+    @Test
+    public void ambosJugadoresTienen40PuntosElQueAnotaElPuntoTieneVentaja() {
+        
+        Jugador jugador2 = new Jugador("Pablo");
+        Partido partido = new Partido(jugador1, jugador2);
+        
+        for(int i = 0; i<3; i++) {
+            jugador1.anotarPunto();
+            jugador2.anotarPunto();
+        }
+        partido.sumarPunto("Pablo");
+        
+        Assert.assertEquals("AV", partido.obtenerPuntos("Pablo"));
     }
 }
