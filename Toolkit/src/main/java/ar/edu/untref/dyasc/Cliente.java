@@ -1,4 +1,4 @@
-package Toolkit;
+package ar.edu.untref.dyasc;
 
 public class Cliente {
     Bitacora miBitacora;

@@ -1,4 +1,4 @@
-package Toolkit;
+package ar.edu.untref.dyasc;
 
 public class SalidaPorConsola extends SalidaDeImpresion {
     String formato = "CONSOLA";

@@ -1,4 +1,4 @@
-package Toolkit;
+package ar.edu.untref.dyasc;
 
 public abstract class SalidaDeImpresion {
     SalidaDeImpresion _proximaSalida = null;
