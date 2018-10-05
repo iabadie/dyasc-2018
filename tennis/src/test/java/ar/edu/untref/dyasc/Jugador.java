@@ -24,7 +24,7 @@ public class Jugador {
         }
     }
 
-    public String getPuntos() {
+    public String obtenerPuntos() {
         return this.puntajes[this.puntos];
     }
 

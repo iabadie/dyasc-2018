@@ -11,7 +11,7 @@ public class TestTenis {
     public void unJugadorSumaUnPunto() {
         Jugador jugador1 = new Jugador();
         jugador1.anotarPunto();
-        Assert.assertEquals("15", jugador1.getPuntos());
+        Assert.assertEquals("15", jugador1.obtenerPuntos());
     }
     
     @Test
@@ -20,7 +20,7 @@ public class TestTenis {
         jugador1.anotarPunto();
         jugador1.anotarPunto();
         jugador1.anotarPunto();
-        Assert.assertEquals("40", jugador1.getPuntos());
+        Assert.assertEquals("40", jugador1.obtenerPuntos());
     }
     
     @Test
