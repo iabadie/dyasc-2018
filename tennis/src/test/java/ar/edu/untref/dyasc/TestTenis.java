@@ -22,4 +22,14 @@ public class TestTenis {
         jugador1.anotarPunto();
         Assert.assertEquals("40", jugador1.getPuntos());
     }
+    
+    @Test
+    public void siJugadorTiene40PuntosYSumaUnoGanaUnGame() {
+        Jugador jugador1 = new Jugador();
+        jugador1.anotarPunto();
+        jugador1.anotarPunto();
+        jugador1.anotarPunto();
+        jugador1.anotarPunto();
+        Assert.assertEquals(1, jugador1.obtenerGames());
+    }
 }
