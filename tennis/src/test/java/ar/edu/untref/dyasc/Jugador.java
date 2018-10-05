@@ -1,10 +1,20 @@
 package ar.edu.untref.dyasc;
 
 public class Jugador {
+    
+    private int puntos;
+    
+    public Jugador() {
+        this.puntos = 0;
+    }
 
     public void anotarPunto() {
-        // TODO Auto-generated method stub
         
+        this.puntos+=15;
+    }
+
+    public int getPuntos() {
+        return this.puntos;
     }
 
 }
