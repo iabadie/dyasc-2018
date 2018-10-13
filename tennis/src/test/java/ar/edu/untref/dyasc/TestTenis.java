@@ -96,6 +96,19 @@ public class TestTenis {
     }
 
     @Test
+    public void siUnJugadorGanaUnGameAmbosJugadoresComienzanConCeroPuntos() {
+        Jugador jugador1 = new Jugador("Pepe");
+        Jugador jugador2 = new Jugador("Pablo");
+        Partido partido = new Partido(jugador1, jugador2);
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");
+        Assert.assertEquals("0", partido.obtenerPuntos("Pepe"));
+        Assert.assertEquals("0", partido.obtenerPuntos("Pablo"));
+    }
+
+    @Test
     public void siUnJugadorGanaUnSetAmbosJugadoresComienzanConCeroGames() {
         Jugador jugador1 = new Jugador("Pepe");
         Jugador jugador2 = new Jugador("Pablo");
