@@ -53,4 +53,12 @@ public class Jugador {
         this.sets += 1;
     }
 
+    public void igualarCeroGames() {
+        this.games = 0;
+    }
+
+    public void igualarPuntosACero() {
+        this.puntos = 0;
+    }
+
 }

@@ -29,11 +29,15 @@ public class Partido {
                 this.participantes.get(nombre).obtenerPuntos().equals("40") ||
                 this.participantes.get(nombre).obtenerPuntos().equals("AV")) {
             this.participantes.get(nombre).anotarGame();
+            this.jugador1.igualarPuntosACero();
+            this.jugador2.igualarPuntosACero();
         } else {
             this.participantes.get(nombre).anotarPunto();
         }
         if(this.participantes.get(nombre).obtenerGames() == 6) {
             this.participantes.get(nombre).anotarSet();
+            this.jugador1.igualarCeroGames();
+            this.jugador2.igualarCeroGames();
         }
     }
 

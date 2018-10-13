@@ -13,7 +13,6 @@ public class TestTenis {
         Jugador jugador2 = new Jugador("Pablo");
         Partido partido = new Partido(jugador1, jugador2);
         partido.sumarPunto("Pepe");
-        System.out.print(partido.obtenerPuntos("Pepe"));
         Assert.assertEquals("15", partido.obtenerPuntos("Pepe"));
     }
 
@@ -94,5 +93,20 @@ public class TestTenis {
             partido.sumarPunto("Pepe");
         }
         Assert.assertEquals(1, partido.obtenerSets("Pepe"));
+    }
+
+    @Test
+    public void siUnJugadorGanaUnSetAmbosJugadoresComienzanConCeroGames() {
+        Jugador jugador1 = new Jugador("Pepe");
+        Jugador jugador2 = new Jugador("Pablo");
+        Partido partido = new Partido(jugador1, jugador2);
+        for(int i=0; i<6; i++) {
+            partido.sumarPunto("Pepe");
+            partido.sumarPunto("Pepe");
+            partido.sumarPunto("Pepe");
+            partido.sumarPunto("Pepe");
+        }
+        Assert.assertEquals(0, partido.obtenerGames("Pepe"));
+        Assert.assertEquals(0, partido.obtenerGames("Pablo"));
     }
 }
