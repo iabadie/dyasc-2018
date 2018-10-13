@@ -19,7 +19,8 @@ public class Partido {
 
     public void sumarPunto(String nombre) {
         if(jugador1.obtenerPuntos()!= jugador2.obtenerPuntos() &&
-                this.participantes.get(nombre).obtenerPuntos().equals("40")) {
+                this.participantes.get(nombre).obtenerPuntos().equals("40") ||
+                this.participantes.get(nombre).obtenerPuntos().equals("AV")) {
             this.participantes.get(nombre).anotarGame();
         } else {
             this.participantes.get(nombre).anotarPunto();

@@ -21,9 +21,6 @@ public class Jugador {
 
     public void anotarPunto() {
         this.puntos+=1;
-        if (puntos == 4){
-            this.games += 1;
-        }
     }
 
     public String obtenerPuntos() {
