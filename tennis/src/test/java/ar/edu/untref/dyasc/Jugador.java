@@ -39,4 +39,8 @@ public class Jugador {
         this.games += 1;
     }
 
+    public void igualarA40() {
+        this.puntos = 3;
+    }
+
 }

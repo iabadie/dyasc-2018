@@ -18,6 +18,13 @@ public class Partido {
     }
 
     public void sumarPunto(String nombre) {
+        if(this.jugador1.obtenerPuntos().equals("AV") ||
+                this.jugador2.obtenerPuntos().equals("AV") &&
+                this.participantes.get(nombre).obtenerPuntos().equals("40")) {
+            this.jugador1.igualarA40();
+            this.jugador2.igualarA40();
+            return;
+        }
         if(jugador1.obtenerPuntos()!= jugador2.obtenerPuntos() &&
                 this.participantes.get(nombre).obtenerPuntos().equals("40") ||
                 this.participantes.get(nombre).obtenerPuntos().equals("AV")) {

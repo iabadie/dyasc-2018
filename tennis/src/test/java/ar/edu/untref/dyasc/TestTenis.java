@@ -66,4 +66,19 @@ public class TestTenis {
         partido.sumarPunto("Pablo");
         Assert.assertEquals(1, partido.obtenerGames("Pablo"));
     }
+    
+    @Test
+    public void siUnJugadorTieneAVyElOtroJugadorAnotaUnPuntoAmbosVuelvenConA40() {
+        Jugador jugador1 = new Jugador("Pepe");
+        Jugador jugador2 = new Jugador("Pablo");
+        Partido partido = new Partido(jugador1, jugador2);
+        for(int i = 0; i<3; i++) {
+            partido.sumarPunto("Pepe");
+            partido.sumarPunto("Pablo");
+        }
+        partido.sumarPunto("Pablo");
+        partido.sumarPunto("Pepe");
+        Assert.assertEquals("40", partido.obtenerPuntos("Pepe"));
+        Assert.assertEquals("40", partido.obtenerPuntos("Pablo"));
+    }
 }
