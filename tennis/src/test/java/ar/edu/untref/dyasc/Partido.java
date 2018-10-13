@@ -32,6 +32,9 @@ public class Partido {
         } else {
             this.participantes.get(nombre).anotarPunto();
         }
+        if(this.participantes.get(nombre).obtenerGames() == 6) {
+            this.participantes.get(nombre).anotarSet();
+        }
     }
 
     public String obtenerPuntos(String nombre) {
@@ -40,6 +43,10 @@ public class Partido {
 
     public int obtenerGames(String nombre) {
         return this.participantes.get(nombre).obtenerGames();
+    }
+
+    public int obtenerSets(String nombre) {
+        return this.participantes.get(nombre).obtenerSets();
     }
     
 }
