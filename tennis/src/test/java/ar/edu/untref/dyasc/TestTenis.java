@@ -6,44 +6,50 @@ import junit.framework.Assert;
 
 @SuppressWarnings("deprecation")
 public class TestTenis {
-    
-    private Jugador jugador1 = new Jugador("Pepe");
-    
+
     @Test
     public void unJugadorSumaUnPunto() {
-        jugador1.anotarPunto();
-        Assert.assertEquals("15", jugador1.obtenerPuntos());
-    }
-    
-    @Test
-    public void unJugadorSumaUnPuntoDe30A40() {
-        jugador1.anotarPunto();
-        jugador1.anotarPunto();
-        jugador1.anotarPunto();
-        Assert.assertEquals("40", jugador1.obtenerPuntos());
-    }
-    
-    @Test
-    public void siJugadorTiene40PuntosYSumaUnoGanaUnGame() {
-        jugador1.anotarPunto();
-        jugador1.anotarPunto();
-        jugador1.anotarPunto();
-        jugador1.anotarPunto();
-        Assert.assertEquals(1, jugador1.obtenerGames());
-    }
-    
-    @Test
-    public void ambosJugadoresTienen40PuntosElQueAnotaElPuntoTieneVentaja() {
-        
+        Jugador jugador1 = new Jugador("Pepe");
         Jugador jugador2 = new Jugador("Pablo");
         Partido partido = new Partido(jugador1, jugador2);
-        
+        partido.sumarPunto("Pepe");
+        System.out.print(partido.obtenerPuntos("Pepe"));
+        Assert.assertEquals("15", partido.obtenerPuntos("Pepe"));
+    }
+
+    @Test
+    public void unJugadorSumaUnPuntoDe30A40() {
+        Jugador jugador1 = new Jugador("Pepe");
+        Jugador jugador2 = new Jugador("Pablo");
+        Partido partido = new Partido(jugador1, jugador2);
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");
+        Assert.assertEquals("40", partido.obtenerPuntos("Pepe"));
+    }
+
+    @Test
+    public void siJugadorTiene40PuntosYSumaUnoGanaUnGame() {
+        Jugador jugador1 = new Jugador("Pepe");
+        Jugador jugador2 = new Jugador("Pablo");
+        Partido partido = new Partido(jugador1, jugador2);
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");
+        Assert.assertEquals(1, partido.obtenerGames("Pepe"));
+    }
+
+    @Test
+    public void ambosJugadoresTienen40PuntosElQueAnotaElPuntoTieneVentaja() {
+        Jugador jugador1 = new Jugador("Pepe");
+        Jugador jugador2 = new Jugador("Pablo");
+        Partido partido = new Partido(jugador1, jugador2);
         for(int i = 0; i<3; i++) {
-            jugador1.anotarPunto();
-            jugador2.anotarPunto();
+            partido.sumarPunto("Pepe");
+            partido.sumarPunto("Pablo");
         }
         partido.sumarPunto("Pablo");
-        
         Assert.assertEquals("AV", partido.obtenerPuntos("Pablo"));
     }
 }

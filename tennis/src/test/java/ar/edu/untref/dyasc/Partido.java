@@ -18,15 +18,20 @@ public class Partido {
     }
 
     public void sumarPunto(String nombre) {
-        if(jugador1.obtenerPuntos()== jugador2.obtenerPuntos() && 
+        if(jugador1.obtenerPuntos()!= jugador2.obtenerPuntos() &&
                 this.participantes.get(nombre).obtenerPuntos().equals("40")) {
-            
+            this.participantes.get(nombre).anotarGame();
+        } else {
             this.participantes.get(nombre).anotarPunto();
         }
     }
 
     public String obtenerPuntos(String nombre) {
         return this.participantes.get(nombre).obtenerPuntos();
+    }
+
+    public int obtenerGames(String nombre) {
+        return this.participantes.get(nombre).obtenerGames();
     }
     
 }

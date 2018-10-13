@@ -1,11 +1,12 @@
 package ar.edu.untref.dyasc;
 
 public class Jugador {
-    
+
     private String nombre;
     private int puntos;
     private String puntajes[];
     private int games;
+
     public Jugador(String nombre) {
         this.nombre = nombre;
         this.puntos = 0;
@@ -19,7 +20,6 @@ public class Jugador {
     }
 
     public void anotarPunto() {
-        
         this.puntos+=1;
         if (puntos == 4){
             this.games += 1;
@@ -36,6 +36,10 @@ public class Jugador {
 
     public String obtenerNombre() {
         return this.nombre;
+    }
+
+    public void anotarGame() {
+        this.games += 1;
     }
 
 }
