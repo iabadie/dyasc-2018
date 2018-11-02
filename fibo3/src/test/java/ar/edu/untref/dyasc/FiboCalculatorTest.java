@@ -21,7 +21,7 @@ public class FiboCalculatorTest {
 
     @Test
     public void testFiboSuccessionArrayInverseResultWithValueZero() {
-        FiboCalculator fibo = asd new FiboCalculator(0);
+        FiboCalculator fibo = new FiboCalculator(0);
         int[] result = new int[0];
         Assert.assertArrayEquals(result, fibo.getFibonacciSuccession("i"));
     }
