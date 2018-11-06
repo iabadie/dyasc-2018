@@ -12,4 +12,5 @@ public class TestBote {
         Bote bote = new Bote();
         Assert.assertNotNull(bote);;
     }
+    
 }
