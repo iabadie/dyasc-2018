@@ -9,8 +9,14 @@ import junit.framework.Assert;
 public class TestBote {
     @Test
     public void crearUnBote() {
-        Bote bote = new Bote();
-        Assert.assertNotNull(bote);;
+        Bote bote = new Bote(1,1);
+        Assert.assertNotNull(bote.obtenerParte(1, 1));;
+    }
+    
+    @Test
+    public void testEstadoDeBoteEsNullSiLasCoordenadasNoCorrespondenAlBote() {
+        Bote bote = new Bote(1,1);
+        Assert.assertNull(bote.obtenerParte(2, 1));;
     }
     
 }

@@ -13,10 +13,16 @@ public class TestTablero {
     }
     
     @Test
-    public void testAgregarUnBoteEnUnaCasilla() {
+    public void testAgregarUnBoteEnUnaCasillaCreaElBote() {
         Tablero tablero = new Tablero(4,2);
-        Bote bote = new Bote();
-        tablero.agregarBoteEnCasilla(bote,3,1);
-        Assert.assertEquals(bote, tablero.obtenerCasilla(3,1));
+        tablero.agregarBoteEnCasilla(3,1);
+        Assert.assertNotNull(tablero.obtenerCasilla(3,1));
+    }
+    
+    @Test
+    public void testAgregarUnCrucerEnCassillasCreaElCrucero() {
+        Tablero tablero = new Tablero(4,2);
+        tablero.agregarCruceroEnCasillas(1,1,true);
+        Assert.assertNotNull(tablero.obtenerCasilla(1,1));
     }
 }
