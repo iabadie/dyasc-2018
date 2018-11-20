@@ -9,8 +9,7 @@ public class TestBatallaNaval {
     public void agregarUnBoteOcupaUnaCasilla(){
         Tablero tablero = new Tablero(4,4);
         Bote bote = new Bote();
-        Casilla casilla = new Casilla();
-        casilla.agregarBote(bote);
-        Assert.assertNotNull(casilla.revisarCasilla());
+        tablero.agregarBoteEnCasilla(bote, 3, 1);
+        Assert.assertNotNull(tablero.obtenerCasilla(3, 1));
     }
 }
