@@ -17,7 +17,12 @@ public class Parte {
         return estado;
     }
     
-    public void marcarGolpe() {
-        estado = "HUNDIDO";
+    public String marcarGolpe() {
+        if (estado.equals("OK")) {
+            estado = "TOCADO";
+        } else {            
+            estado = "HUNDIDO";
+        }
+        return estado;
     }
 }

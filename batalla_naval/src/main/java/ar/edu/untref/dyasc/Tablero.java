@@ -34,4 +34,15 @@ public class Tablero {
     public Unidad obtenerCasilla(int x, int y) {
         return tablero[x-1][y-1];
     }
+
+    public String dispararHacia(int x, int y) {
+        Unidad unidad = tablero[x-1][y-1];
+        if (unidad != null) {
+            Parte parte = unidad.obtenerParte(x, y);
+            if (parte != null) {
+                return parte.marcarGolpe();
+            }
+        }
+        return "AGUA";
+    }
 }
