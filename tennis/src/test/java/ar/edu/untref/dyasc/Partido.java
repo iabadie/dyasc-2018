@@ -49,7 +49,7 @@ public class Partido {
 		    	this.jugarTieBrake();
 		    }
     	}else {
-    		sumarPuntoTieBrake(nombre);
+    		this.sumarPuntoTieBrake(nombre);
     	}
     }
     
@@ -57,7 +57,7 @@ public class Partido {
     	this.tieBrake = true;
 	}
 
-	private void sumarPuntoTieBrake(String nombre) {
+	public void sumarPuntoTieBrake(String nombre) {
     	int diferencia = Math.abs(this.jugador1.obtenerPuntosTieBrake()-this.jugador2.obtenerPuntosTieBrake());
     	
     	if(this.participantes.get(nombre).obtenerPuntosTieBrake()>5 && diferencia==2){
@@ -71,6 +71,10 @@ public class Partido {
 
 	public String obtenerPuntos(String nombre) {
         return this.participantes.get(nombre).obtenerPuntos();
+    }
+	
+	public int obtenerPuntosTieBrake(String nombre) {
+        return this.participantes.get(nombre).obtenerPuntosTieBrake();
     }
 
     public int obtenerGames(String nombre) {
