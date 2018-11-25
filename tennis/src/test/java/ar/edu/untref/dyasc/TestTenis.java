@@ -122,4 +122,70 @@ public class TestTenis {
         Assert.assertEquals(0, partido.obtenerGames("Pepe"));
         Assert.assertEquals(0, partido.obtenerGames("Pablo"));
     }
+    
+    @Test
+    public void siUnJugadorTieneCincoGamesYAnotaOtroConDiferenciaDeDosGanaUnSet(){
+    	Jugador jugador1 = new Jugador("Pepe");
+        Jugador jugador2 = new Jugador("Pablo");
+        Partido partido = new Partido(jugador1, jugador2);
+        for(int i=0; i<4; i++) {
+            partido.sumarPunto("Pepe");
+            partido.sumarPunto("Pepe");
+            partido.sumarPunto("Pepe");
+            partido.sumarPunto("Pepe");
+            
+            partido.sumarPunto("Pablo");
+            partido.sumarPunto("Pablo");
+            partido.sumarPunto("Pablo");
+            partido.sumarPunto("Pablo");
+        }
+
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");
+        
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");        
+
+        Assert.assertEquals(1, partido.obtenerSets("Pepe"));
+    }
+    
+    @Test
+    public void siUnJugadorTieneCincoGamesElOtroTieneCuatroYGanaOtroGameSinDiferenciaJueganTieBrake(){
+    	Jugador jugador1 = new Jugador("Pepe");
+        Jugador jugador2 = new Jugador("Pablo");
+        Partido partido = new Partido(jugador1, jugador2);
+        for(int i=0; i<4; i++) {
+            partido.sumarPunto("Pepe");
+            partido.sumarPunto("Pepe");
+            partido.sumarPunto("Pepe");
+            partido.sumarPunto("Pepe");
+            
+            partido.sumarPunto("Pablo");
+            partido.sumarPunto("Pablo");
+            partido.sumarPunto("Pablo");
+            partido.sumarPunto("Pablo");
+        }
+
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");
+
+        partido.sumarPunto("Pablo");
+        partido.sumarPunto("Pablo");
+        partido.sumarPunto("Pablo");
+        partido.sumarPunto("Pablo");
+    
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");
+        
+        Assert.assertEquals(0, partido.obtenerSets("Pepe"));
+    }
+    
 }

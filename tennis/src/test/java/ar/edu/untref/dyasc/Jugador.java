@@ -7,6 +7,7 @@ public class Jugador {
     private String puntajes[];
     private int games;
     private int sets;
+    private int puntosTieBrake;
 
     public Jugador(String nombre) {
         this.nombre = nombre;
@@ -19,6 +20,7 @@ public class Jugador {
         this.puntajes[2]="30";
         this.puntajes[3]="40";
         this.puntajes[4]="AV";
+        this.puntosTieBrake = 0;
     }
 
     public void anotarPunto() {
@@ -60,5 +62,12 @@ public class Jugador {
     public void igualarPuntosACero() {
         this.puntos = 0;
     }
-
+    
+    public void anotarPuntosTieBrake(){
+    	this.puntosTieBrake+=1;
+    }
+    
+    public int obtenerPuntosTieBrake(){
+    	return this.puntosTieBrake;
+    }
 }
