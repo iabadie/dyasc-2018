@@ -87,9 +87,9 @@ public class Partido {
 
 	public String ganador() {
 		String ganador = "";
-		if(this.obtenerSets(this.jugador1.obtenerNombre())==3) {
+		if(this.jugador1.esGanador()) {
 			ganador = this.jugador1.obtenerNombre();
-		}else if(this.obtenerSets(this.jugador2.obtenerNombre())==3){
+		}else if(this.jugador2.esGanador()){
 			ganador = this.jugador2.obtenerNombre();
 		}else {
 			ganador = "nadie";

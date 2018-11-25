@@ -7,20 +7,18 @@ import junit.framework.Assert;
 @SuppressWarnings("deprecation")
 public class TestTenis {
 
+    Jugador jugador1 = new Jugador("Pepe");
+    Jugador jugador2 = new Jugador("Pablo");
+	Partido partido = new Partido(jugador1, jugador2);
+	
     @Test
     public void unJugadorSumaUnPunto() {
-        Jugador jugador1 = new Jugador("Pepe");
-        Jugador jugador2 = new Jugador("Pablo");
-        Partido partido = new Partido(jugador1, jugador2);
         partido.sumarPunto("Pepe");
         Assert.assertEquals("15", partido.obtenerPuntos("Pepe"));
     }
 
     @Test
     public void unJugadorSumaUnPuntoDe30A40() {
-        Jugador jugador1 = new Jugador("Pepe");
-        Jugador jugador2 = new Jugador("Pablo");
-        Partido partido = new Partido(jugador1, jugador2);
         partido.sumarPunto("Pepe");
         partido.sumarPunto("Pepe");
         partido.sumarPunto("Pepe");
@@ -29,9 +27,6 @@ public class TestTenis {
 
     @Test
     public void siJugadorTiene40PuntosYSumaUnoGanaUnGame() {
-        Jugador jugador1 = new Jugador("Pepe");
-        Jugador jugador2 = new Jugador("Pablo");
-        Partido partido = new Partido(jugador1, jugador2);
         partido.sumarPunto("Pepe");
         partido.sumarPunto("Pepe");
         partido.sumarPunto("Pepe");
@@ -41,9 +36,6 @@ public class TestTenis {
 
     @Test
     public void ambosJugadoresTienen40PuntosElQueAnotaElPuntoTieneVentaja() {
-        Jugador jugador1 = new Jugador("Pepe");
-        Jugador jugador2 = new Jugador("Pablo");
-        Partido partido = new Partido(jugador1, jugador2);
         for(int i = 0; i<3; i++) {
             partido.sumarPunto("Pepe");
             partido.sumarPunto("Pablo");
@@ -54,9 +46,6 @@ public class TestTenis {
     
     @Test
     public void siUnJugadorTieneAVyGanaUnPuntoEntoncesGanaUnGame() {
-        Jugador jugador1 = new Jugador("Pepe");
-        Jugador jugador2 = new Jugador("Pablo");
-        Partido partido = new Partido(jugador1, jugador2);
         for(int i = 0; i<3; i++) {
             partido.sumarPunto("Pepe");
             partido.sumarPunto("Pablo");
@@ -68,9 +57,6 @@ public class TestTenis {
     
     @Test
     public void siUnJugadorTieneAVyElOtroJugadorAnotaUnPuntoAmbosVuelvenConA40() {
-        Jugador jugador1 = new Jugador("Pepe");
-        Jugador jugador2 = new Jugador("Pablo");
-        Partido partido = new Partido(jugador1, jugador2);
         for(int i = 0; i<3; i++) {
             partido.sumarPunto("Pepe");
             partido.sumarPunto("Pablo");
@@ -83,9 +69,6 @@ public class TestTenis {
 
     @Test
     public void siUnJugadorGana6GamesGanaUnSet() {
-        Jugador jugador1 = new Jugador("Pepe");
-        Jugador jugador2 = new Jugador("Pablo");
-        Partido partido = new Partido(jugador1, jugador2);
         for(int i=0; i<6; i++) {
             partido.sumarPunto("Pepe");
             partido.sumarPunto("Pepe");
@@ -97,9 +80,6 @@ public class TestTenis {
 
     @Test
     public void siUnJugadorGanaUnGameAmbosJugadoresComienzanConCeroPuntos() {
-        Jugador jugador1 = new Jugador("Pepe");
-        Jugador jugador2 = new Jugador("Pablo");
-        Partido partido = new Partido(jugador1, jugador2);
         partido.sumarPunto("Pepe");
         partido.sumarPunto("Pepe");
         partido.sumarPunto("Pepe");
@@ -110,9 +90,6 @@ public class TestTenis {
 
     @Test
     public void siUnJugadorGanaUnSetAmbosJugadoresComienzanConCeroGames() {
-        Jugador jugador1 = new Jugador("Pepe");
-        Jugador jugador2 = new Jugador("Pablo");
-        Partido partido = new Partido(jugador1, jugador2);
         for(int i=0; i<6; i++) {
             partido.sumarPunto("Pepe");
             partido.sumarPunto("Pepe");
@@ -125,9 +102,6 @@ public class TestTenis {
     
     @Test
     public void siUnJugadorTieneCincoGamesYAnotaOtroConDiferenciaDeDosGanaUnSet(){
-    	Jugador jugador1 = new Jugador("Pepe");
-        Jugador jugador2 = new Jugador("Pablo");
-        Partido partido = new Partido(jugador1, jugador2);
         for(int i=0; i<4; i++) {
             partido.sumarPunto("Pepe");
             partido.sumarPunto("Pepe");
@@ -155,9 +129,6 @@ public class TestTenis {
     
     @Test
     public void siUnJugadorTieneCincoGamesElOtroTieneCuatroYGanaOtroGameSinDiferenciaNoGanaSet(){
-    	Jugador jugador1 = new Jugador("Pepe");
-        Jugador jugador2 = new Jugador("Pablo");
-        Partido partido = new Partido(jugador1, jugador2);
         for(int i=0; i<4; i++) {
             partido.sumarPunto("Pepe");
             partido.sumarPunto("Pepe");
@@ -190,9 +161,6 @@ public class TestTenis {
     
     @Test
     public void siUnJugadorTieneCincoGamesElOtroTieneCuatroYGanaOtroGameConDiferenciaGanaSet(){
-    	Jugador jugador1 = new Jugador("Pepe");
-        Jugador jugador2 = new Jugador("Pablo");
-        Partido partido = new Partido(jugador1, jugador2);
         for(int i=0; i<4; i++) {
             partido.sumarPunto("Pepe");
             partido.sumarPunto("Pepe");
@@ -220,9 +188,6 @@ public class TestTenis {
     
     @Test
     public void siUnJugadorTieneCincoGamesElOtroTieneCuatroYGanaOtroGameSinDiferenciaJueganTieBrake(){
-    	Jugador jugador1 = new Jugador("Pepe");
-        Jugador jugador2 = new Jugador("Pablo");
-        Partido partido = new Partido(jugador1, jugador2);
         for(int i=0; i<4; i++) {
             partido.sumarPunto("Pepe");
             partido.sumarPunto("Pepe");
@@ -261,9 +226,6 @@ public class TestTenis {
     
     @Test
     public void seJuegaTieBrakeYGanaUnSet(){
-    	Jugador jugador1 = new Jugador("Pepe");
-        Jugador jugador2 = new Jugador("Pablo");
-        Partido partido = new Partido(jugador1, jugador2);
         for(int i=0; i<4; i++) {
             partido.sumarPunto("Pepe");
             partido.sumarPunto("Pepe");
@@ -298,5 +260,21 @@ public class TestTenis {
     	partido.sumarPuntoTieBrake("Pepe");
         
     	Assert.assertEquals(1, partido.obtenerSets("Pepe"));
+    	Assert.assertEquals(0, partido.obtenerGames("Pepe"));
+    }
+    
+    @Test
+    public void comprobamosQueHayUnGanador(){
+    	
+    	for(int j=0; j<3; j++) {
+    	   	for(int i=0; i<6; i++) {
+                partido.sumarPunto("Pepe");
+                partido.sumarPunto("Pepe");
+                partido.sumarPunto("Pepe");
+                partido.sumarPunto("Pepe");
+        	}
+    	}
+    	
+    	Assert.assertTrue(partido.ganador().equals("Pepe"));
     }
 }

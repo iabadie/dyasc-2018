@@ -8,6 +8,7 @@ public class Jugador {
     private int games;
     private int sets;
     private int puntosTieBrake;
+    private boolean ganador;
 
     public Jugador(String nombre) {
         this.nombre = nombre;
@@ -21,6 +22,7 @@ public class Jugador {
         this.puntajes[3]="40";
         this.puntajes[4]="AV";
         this.puntosTieBrake = 0;
+        this.ganador = false;
     }
 
     public void anotarPunto() {
@@ -53,6 +55,9 @@ public class Jugador {
 
     public void anotarSet() {
         this.sets += 1;
+        if(this.sets==3) {
+        	this.ganador=true;
+        }
     }
 
     public void igualarCeroGames() {
@@ -69,5 +74,9 @@ public class Jugador {
     
     public int obtenerPuntosTieBrake(){
     	return this.puntosTieBrake;
+    }
+    
+    public boolean esGanador(){
+    	return this.ganador;
     }
 }
