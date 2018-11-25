@@ -258,4 +258,45 @@ public class TestTenis {
         
     	Assert.assertEquals(0, partido.obtenerSets("Pepe"));
     }
+    
+    @Test
+    public void seJuegaTieBrakeYGanaUnSet(){
+    	Jugador jugador1 = new Jugador("Pepe");
+        Jugador jugador2 = new Jugador("Pablo");
+        Partido partido = new Partido(jugador1, jugador2);
+        for(int i=0; i<4; i++) {
+            partido.sumarPunto("Pepe");
+            partido.sumarPunto("Pepe");
+            partido.sumarPunto("Pepe");
+            partido.sumarPunto("Pepe");
+            
+            partido.sumarPunto("Pablo");
+            partido.sumarPunto("Pablo");
+            partido.sumarPunto("Pablo");
+            partido.sumarPunto("Pablo");
+        }
+
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");
+        
+        partido.sumarPunto("Pablo");
+        partido.sumarPunto("Pablo");
+        partido.sumarPunto("Pablo");
+        partido.sumarPunto("Pablo");
+        
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");
+        partido.sumarPunto("Pepe");
+        
+        for(int j=0; j<6; j++) {
+        	partido.sumarPuntoTieBrake("Pepe");
+        }
+    	partido.sumarPuntoTieBrake("Pablo");
+    	partido.sumarPuntoTieBrake("Pepe");
+        
+    	Assert.assertEquals(1, partido.obtenerSets("Pepe"));
+    }
 }

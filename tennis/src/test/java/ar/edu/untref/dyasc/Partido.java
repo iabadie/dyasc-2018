@@ -60,7 +60,7 @@ public class Partido {
 	public void sumarPuntoTieBrake(String nombre) {
     	int diferencia = Math.abs(this.jugador1.obtenerPuntosTieBrake()-this.jugador2.obtenerPuntosTieBrake());
     	
-    	if(this.participantes.get(nombre).obtenerPuntosTieBrake()>5 && diferencia==2){
+    	if(this.participantes.get(nombre).obtenerPuntosTieBrake()>5 && diferencia>=2){
     		this.participantes.get(nombre).anotarSet();
     		this.jugador1.igualarCeroGames();
 	        this.jugador2.igualarCeroGames();
